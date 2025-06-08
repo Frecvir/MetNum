@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>METRAP - Método del Trapecio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- Chart.js (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+   <!-- BARRA DE NAVEGACIÓN -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white">METRAP</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="calculadora.html" class="nav-item nav-link">Cal Interpol Lin</a>
+					<a href="calculadoramt.html" class="nav-item nav-link">Cal Met Trap</a>
+					<a href="calculadoragaus.html" class="nav-item nav-link">Cal Gauss</a>
+                    <div class="nav-item dropdown">
+                        </div>
+                    </div>
+                </div>
+        </nav>
+    </div>
+
+    <!-- Encabezado -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 600px">
+            <div class="container">
+
+                <h1 class="text-primary font-weight-medium m-0"><br><br>MÉTODO DEL TRAPECIO MÚLTIPLE</h1>
+                <h3 class="text-white m-0">Considera el listado para ingresar la función</h3><br>
+
+                <!-- Lista de operaciones permitidas -->
+                <div class="text-white">
+                    <h2>Operaciones matemáticas permitidas:</h2>
+                    <h3>Aritméticas:</h3>
+                    <ul>
+                        <li>+ (Suma)</li>
+                        <li>- (Resta)</li>
+                        <li>* (Multiplicación)</li>
+                        <li>/ (División)</li>
+                        <li>** (Potenciación, por ejemplo, x**2)</li>
+                    </ul>
+                    <h3>Funciones matemáticas estándar:</h3>
+                    <ul>
+                        <li>Math.sin(x) – Seno de x</li>
+                        <li>Math.cos(x) – Coseno de x</li>
+                        <li>Math.tan(x) – Tangente de x</li>
+                        <li>Math.log(x) – Logaritmo natural</li>
+                        <li>Math.log10(x) – Logaritmo base 10</li>
+                        <li>Math.exp(x) – Exponencial</li>
+                        <li>Math.sqrt(x) – Raíz cuadrada</li>
+                        <li>Math.abs(x) – Valor absoluto</li>
+                        <li>Math.PI – Constante pi</li>
+                        <li>Math.E – Constante euleriana</li>
+                    </ul>
+                </div>
+
+                <!-- Formulario -->
+                <form id="interpolationForm">
+              <!-- Añadimos un campo para ingresar la función -->
+<h4 class="text-white mt-4">Método del Trapecio Múltiple</h4>
+<table border="1" bordercolor="white" class="text-white">
+    <tr>
+        <th>Valor de a (inicio del intervalo)</th>
+        <th>Valor de b (fin del intervalo)</th>
+        <th>Subintervalos (n)</th>
+        <th>Función (en formato f(x))</th>
+    </tr>
+    <tr>
+        <td><input type="number" step="any" id="a" required></td>
+        <td><input type="number" step="any" id="b" required></td>
+        <td><input type="number" step="any" id="n" required></td>
+        <td><input type="text" id="funcion" placeholder="Ejemplo: x*x" required></td>
+    </tr>
+</table>
+
+<!-- Botón para calcular el Trapecio -->
+                    <br>
+
+                    <h4 class="text-white mt-4">Cálculo de Error</h4>
+                    <table border="1" bordercolor="white" class="text-white">
+                        <tr>
+                            <th>Valor real</th>
+                            <th>Valor aproximado</th>
+                        </tr>
+                        <tr>
+                            <td><input type="number" step="any" id="valorReal"></td>
+                            <td><input type="number" step="any" id="valorAproximado"></td>
+                        </tr>
+                    </table>
+
+                    <br>
+
+                    <!-- Botones -->
+                    <button type="button" class="btn btn-primary font-weight-bold px-3" onclick="calcularTrapecio()">Calcular Trapecio</button>
+                    <button type="button" class="btn btn-warning font-weight-bold px-3" onclick="calcularErrores()">Calcular Errores</button>
+                </form>
+
+                <!-- Resultados -->
+                <div id="results" class="results mt-4">
+                    <h2 class="text-primary font-weight-medium m-0">Resultados</h2>
+                    <p class="text-white m-0" id="trapecioResult"></p>
+                    <p class="text-white m-0" id="absoluteError"></p>
+                    <p class="text-white m-0" id="relativeError"></p>
+                    <p class="text-white m-0" id="percentageError"></p>
+                </div>
+
+                <!-- Gráfico opcional -->
+                <canvas id="myChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div>
+        <p class="mb-2 text-white"><a class="font-weight-bold">Elaborado para proyecto escolar</a></p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/js1.js"></script> 
+</body>
+
+</html>

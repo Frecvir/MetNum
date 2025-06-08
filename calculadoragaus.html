@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>METGAUSS - Método de Gauss-Jordan</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <!-- Estilos personalizados -->
+    <link href="css/style.min.css" rel="stylesheet" />
+
+    <!-- Chart.js (opcional) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white">METGAUSS</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="calculadora.html" class="nav-item nav-link">Cal Interpol Lin</a>
+                    <a href="calculadoramt.html" class="nav-item nav-link">Cal Met Trap</a>
+                    <a href="calculadoragaus.html" class="nav-item nav-link">Cal Gauss</a>
+                    <div class="nav-item dropdown"></div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Encabezado -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 600px">
+            <div class="container">
+
+                <h1 class="text-primary font-weight-medium m-0"><br /><br />MÉTODO GAUSS-JORDAN</h1>
+                <h3 class="text-white m-0">Ingrese los coeficientes del sistema 3x3</h3><br />
+
+                <!-- Formulario -->
+                <form id="gaussForm">
+                    <table>
+                        <tr>
+                            <th>x₁</th>
+                            <th>y₁</th>
+                            <th>z₁</th>
+                            <th>= R₁</th>
+                        </tr>
+                        <tr>
+                            <td><input type="number" step="any" id="a11" required /></td>
+                            <td><input type="number" step="any" id="a12" required /></td>
+                            <td><input type="number" step="any" id="a13" required /></td>
+                            <td><input type="number" step="any" id="b1" required /></td>
+                        </tr>
+                        <tr>
+                            <th>x₂</th>
+                            <th>y₂</th>
+                            <th>z₂</th>
+                            <th>= R₂</th>
+                        </tr>
+                        <tr>
+                            <td><input type="number" step="any" id="a21" required /></td>
+                            <td><input type="number" step="any" id="a22" required /></td>
+                            <td><input type="number" step="any" id="a23" required /></td>
+                            <td><input type="number" step="any" id="b2" required /></td>
+                        </tr>
+                        <tr>
+                            <th>x₃</th>
+                            <th>y₃</th>
+                            <th>z₃</th>
+                            <th>= R₃</th>
+                        </tr>
+                        <tr>
+                            <td><input type="number" step="any" id="a31" required /></td>
+                            <td><input type="number" step="any" id="a32" required /></td>
+                            <td><input type="number" step="any" id="a33" required /></td>
+                            <td><input type="number" step="any" id="b3" required /></td>
+                        </tr>
+                    </table>
+					<br>
+                    <button type="submit" class="btn btn-primary font-weight-bold px-3">RESOLVER</button>
+					<button type="button" id="limpiarBtn" class="btn btn-secondary font-weight-bold px-3 ml-2">LIMPIAR</button>
+
+                </form>
+
+                <br />
+
+                <!-- Resultados -->
+                <div id="resultado" style="color: white; font-size: 1.2rem;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div>
+        <p class="mb-2 text-white"><a class="font-weight-bold">Elaborado para proyecto escolar</a></p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/js2.js"></script>
+</body>
+
+</html>

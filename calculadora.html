@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>INTERPOLAC</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0">
+                <h1 class="m-0 display-4 text-uppercase text-white">INTERPOLAC</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="calculadora.html" class="nav-item nav-link">Cal Interpol Lin</a>
+					<a href="calculadoramt.html" class="nav-item nav-link">Cal Met Trap</a>
+					<a href="calculadoragaus.html" class="nav-item nav-link">Cal Gauss</a>
+                    <div class="nav-item dropdown">
+                        </div>
+                    </div>
+                </div>
+        </nav>
+    </div>
+
+    <!-- Encabezado -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 600px">
+
+            <div class="container">
+                <h1 class="text-primary font-weight-medium m-0"><br><br>Interpolación Lineal</h1>
+                <h3 class="text-white m-0"><br>Por favor ingresa los datos</h3>
+
+                <!-- Formulario de interpolación -->
+                <form id="interpolationForm">
+                    <table border="1" bordercolor="white" class="text-white" align="left">
+                        <tr>
+                            <th>Valor de x</th>
+                            <th>Valor de X0</th>
+                            <th>Valor de f(X0)</th>
+                            <th>Valor de X1</th>
+                            <th>Valor de f(X1)</th>
+                        </tr>
+                        <tr>
+                            <td><input type="number" step="any" id="x" required></td>
+                            <td><input type="number" step="any" id="X0" required></td>
+                            <td><input type="number" step="any" id="fX0" required></td>
+                            <td><input type="number" step="any" id="X1" required></td>
+                            <td><input type="number" step="any" id="fX1" required></td>
+                        </tr>
+                    </table>
+                    <br>
+
+                    <!-- Tabla para el cálculo de error -->
+                    <h4 class="text-white mt-4">Cálculo de Error</h4>
+                    <table border="1" bordercolor="white" class="text-white">
+                        <tr>
+                            <th>Valor real</th>
+                            <th>Valor aproximado</th>
+                        </tr>
+                        <tr>
+                            <td><input type="number" step="any" id="valorReal"></td>
+                            <td><input type="number" step="any" id="valorAproximado"></td>
+                        </tr>
+                    </table>
+
+                    <br>
+                    <!-- Botones -->
+                    <button type="button" class="btn btn-success font-weight-bold px-3" onclick="calcularInterpolacion()">Calcular Interpolación</button>
+                    <button type="button" class="btn btn-warning font-weight-bold px-3" onclick="calcularErrores()">Calcular Errores</button>
+                </form>
+
+                <!-- Resultados -->
+                <div id="results" class="results mt-4">
+                    <h2 class="text-primary font-weight-medium m-0">Resultados</h2>
+                    <p class="text-white m-0" id="fX"></p>
+                    <p class="text-white m-0" id="absoluteError"></p>
+                    <p class="text-white m-0" id="relativeError"></p>
+                    <p class="text-white m-0" id="percentageError"></p>
+                </div>
+
+                <!-- Gráfico opcional -->
+                <canvas id="myChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div>
+        <p class="mb-2 text-white"><a class="font-weight-bold">Elaborado para proyecto escolar</a></p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
