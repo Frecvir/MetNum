@@ -8,7 +8,7 @@
     <meta content="Free Website Template" name="keywords">
     <meta content="Free Website Template" name="description">
 
-    <!-- fUENTE DE GOOGLE FONTS -->
+    <!-- FUENTE DE GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
 
@@ -37,12 +37,12 @@
                 <div class="navbar-nav ml-auto p-4">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <a href="calculadora.html" class="nav-item nav-link">Cal Interpol Lin</a>
-					<a href="calculadoramt.html" class="nav-item nav-link">Cal Met Trap</a>
-					<a href="calculadoragaus.html" class="nav-item nav-link">Cal Gauss</a>
+                    <a href="calculadoramt.html" class="nav-item nav-link">Cal Met Trap</a>
+                    <a href="calculadoragaus.html" class="nav-item nav-link">Cal Gauss</a>
                     <div class="nav-item dropdown">
-                        </div>
                     </div>
                 </div>
+            </div>
         </nav>
     </div>
     
@@ -57,8 +57,9 @@
                         <h2 class="text-primary font-weight-medium m-0">Estimando valores con precisión.</h2>
                         <h1 class="display-1 text-white m-0">CALCULADORA </h1>
                         <h2 class="text-white m-0">ELIGE EL CÁLCULO CORRECTO <br> </h2>
-						<button class="btn btn-primary font-weight-bold px-3" onclick="window.location.href='calculadora.html'">CALCULAR INTERPOLACIONES LINEALES</button>
-						<button class="btn btn-primary font-weight-bold px-3" onclick="window.location.href='calculadoramt.html'">CALCULAR MÉTODO TRAPECIO</button>
+                        <button class="btn btn-primary font-weight-bold px-3" onclick="location.href='#interpolacion'">CALCULAR INTERPOLACIONES LINEALES</button>
+                        <button class="btn btn-primary font-weight-bold px-3" onclick="location.href='#trapecio'">CALCULAR MÉTODO TRAPECIO</button>
+                        <button class="btn btn-primary font-weight-bold px-3" onclick="location.href='#gauss'">CALCULAR MÉTODO GAUSS-JORDAN</button>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -67,8 +68,9 @@
                         <h2 class="text-primary font-weight-medium m-0">Estimando valores con precisión.</h2>
                         <h1 class="display-1 text-white m-0">CALCULADORA</h1>
                         <h2 class="text-white m-0">ELIGE EL CÁLCULO CORRECTO.</h2>
-						<button class="btn btn-primary font-weight-bold px-3" onclick="window.location.href='calculadora.html'">CALCULAR INTERPOLACIONES LINEALES</button>
-						<button class="btn btn-primary font-weight-bold px-3" onclick="window.location.href='calculadoramt.html'">CALCULAR MÉTODO TRAPECIO</button>
+                        <button class="btn btn-primary font-weight-bold px-3" onclick="location.href='#interpolacion'">CALCULAR INTERPOLACIONES LINEALES</button>
+                        <button class="btn btn-primary font-weight-bold px-3" onclick="location.href='#trapecio'">CALCULAR MÉTODO TRAPECIO</button>
+                        <button class="btn btn-primary font-weight-bold px-3" onclick="location.href='#gauss'">CALCULAR MÉTODO GAUSS-JORDAN</button>
                     </div>
                 </div>
             </div>
@@ -81,19 +83,20 @@
         </div>
     </div>
 
-<!-- iNTERPOLACIONES LINEALES INFORMACIÓN -->
-    <div class="container-fluid py-5">
+    <!-- iNTERPOLACIONES LINEALES INFORMACIÓN -->
+    <div class="container-fluid py-5" id="interpolacion">
         <div class="container">
             <div class="section-title">
                 <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">¿Qué Son</h4>
-                <h1 #display-4> Las interpolaciones lineales? </h1>
+                <h1 class="display-4"> Las interpolaciones lineales? </h1>
+				<button class="btn btn-primary font-weight-bold px-3" onclick="location.href='calculadora.html'">CALCULAR</button>
             </div>
             <div class="row">
                 <div class="col-lg-4 py-0 py-lg-5">
                     <h1 class="mb-3">Definición</h1>
                     <h5 class="mb-3">La interpolación lineal</h5>
                     <p>es un método matemático utilizado para estimar valores dentro de un rango definido entre dos puntos conocidos. Se basa en la suposición de que los datos varían linealmente entre estos puntos. Su ecuación general es:</p>
-					<img class="position-absolute w-150 h-50" src="img/form.png" style="object-fit: cover;">
+                    <img class="position-absolute w-150 h-50" src="img/form.png" style="object-fit: cover;">
                 </div>
                 <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -110,24 +113,28 @@
                     <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>Método simple y rápido de implementar.</h5>
                     <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>Requiere solo dos puntos para hacer la estimación.</h5>
                     <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>No necesita cálculos avanzados como derivadas o integrales.</h5>
-                </div>
+					
                 </div>
             </div>
         </div>
+    </div>
    
-	<!-- MÉTODO DE TRAPECIO -->
- <div class="container-fluid py-5">
+    <!-- MÉTODO DE TRAPECIO -->
+    <div class="container-fluid py-5" id="trapecio">
         <div class="container">
             <div class="section-title">
                 <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">¿Qué es</h4>
-                <h1 #display-4> El Método De Trapecio Multiple? </h1>
+                <h1 class="display-4"> El Método De Trapecio Multiple? </h1>
+				<button class="btn btn-primary font-weight-bold px-3" onclick="location.href='calculadoramt.html'">CALCULAR</button>
             </div>
             <div class="row">
                 <div class="col-lg-4 py-0 py-lg-5">
                     <h1 class="mb-3">Definición</h1>
                     <h5 class="mb-3">El Método De Trapecio Múltiple</h5>
                     <p>El método del trapecio es una técnica de integración numérica que se utiliza para aproximar el valor de una integral definida. Consiste en dividir el intervalo [𝑎,𝑏] en subintervalos más pequeños y aproximar el área bajo la curva usando trapecios en lugar de rectángulos. <br> 🔹 Fórmula general del trapecio múltiple:</p>
-					<img class="position-absolute w-150 h-50" src="img/form2.png" style="object-fit: cover;">
+                    <img class="position-absolute w-100 h-10" src="img/form2.png" style="object-fit: cover;">
+					<br><br><br><br><br>
+					
                 </div>
                 <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
                     <div class="position-relative h-100">
@@ -141,85 +148,60 @@
                     <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>🧮 Computación científica: Parte de algoritmos numéricos en cálculos donde la integral no se puede resolver analíticamente.</h5>
                     <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>📈 Economía y finanzas: Para evaluar funciones que representan ingresos, costos o tasas de cambio.</h5>
                     <p><br>✔ Ventajas:</p>
-					<h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>🔹 Simplicidad: Es fácil de entender y aplicar, incluso a mano.</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>🔹 Simplicidad: Es fácil de entender y aplicar, incluso a mano.</h5>
                     <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>🔹 Versatilidad: Puede usarse tanto con funciones explícitas como con datos tabulados.</h5>
-                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>🔹 Buena aproximación para funciones suaves (continuas y sin cambios bruscos.</h5>
-                </div>
-                </div>
-            </div>
-        </div>
-
-    <!-- pORTADA -->
-    <div class="container-fluid pt-5">
-        <div class="container">
-            <div class="section-title">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">PORTADA</h4>
-                <h1 class="display-4"></h1>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="img/MATYP-1.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <h4>MATERIA Y PROFESOR</h4>
-                            <p class="m-0">METODOS NUMERICOS</p>
-                             <br>ING. EDGAR DAVILA MARTINEZ</div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="img/un.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <h4>INSTITUCIÓN Y CARRERA</h4>
-                            <p class="m-0">UNIVERSIDAD ESTATAL DEL VALLE DE ECATEPEC</p>
-							<p class="m-0">UNEVE</p>
-							<p class="m-0">INGENIERÍA EN COMUNICACIÓN MULTIMEDIA</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-5">
-                    <div class="row align-items-center">
-                        <div class="col-sm-5">
-                            <img class="img-fluid mb-3 mb-sm-0" src="img/un-3.jpg" alt="">
-                        </div>
-                        <div class="col-sm-7">
-                            <h4>ALUMNOS</h4>
-                            <p class="m-0">ANAYA GONZÁLEZ MARÍA FERNANDA</p>
-							<p class="m-0"><br>ALVA RIVERO ATZIN IXCHEL</p>
-							<p class="m-0"><br>LÓPEZ GARCÍA BRYAN</p>
-                        </div>
-                    </div>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>🔹 Buena aproximación para funciones suaves (continuas y sin cambios bruscos).</h5>
+					<br>
+					
                 </div>
             </div>
         </div>
     </div>
-	<footer>
-        <div class="container-fluid text-center text-black border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-            <p class="m-0 text-black">Diseñado para uso escolar por estudiantes de la UNEVE <a class="font-weight-bold"></a></p>
+
+    <!-- MÉTODO DE GAUSS-JORDAN -->
+    <div class="container-fluid py-5" id="gauss" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">¿Qué es</h4>
+                <h1 class="display-4"> El Método De Gauss-Jordan? </h1>
+				<button class="btn btn-primary font-weight-bold px-3" onclick="location.href='calculadoragaus.html'">CALCULAR</button>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 py-0 py-lg-5">
+                    <h1 class="mb-3">Definición</h1>
+                    <h5 class="mb-3">El Método De Gauss-Jordan</h5>
+                    <p>El método de Gauss-Jordan es una técnica de álgebra lineal que permite resolver sistemas de ecuaciones lineales mediante operaciones elementales en las filas de una matriz ampliada hasta obtener la matriz identidad en la parte de coeficientes.</p>
+                    <p>🔹 Es una extensión del método de eliminación de Gauss que simplifica el proceso al eliminar las variables de manera directa.</p>
+                    <img class="position-absolute w-150 h-50" src="img/matrizi.png" style="object-fit: cover;">
+					
+					
+                </div>
+                <div class="col-lg-4 py-5 py-lg-0" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-80" src="img/about.png" style="object-fit: cover;">
+						
+                    </div>
+                </div>
+                <div class="col-lg-4 py-0 py-lg-5">
+                    <h1 class="mb-3">Aplicaciones y Ventajas</h1>
+                    <p>✔ Aplicaciones:</p>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>🔢 Resolver sistemas de ecuaciones lineales en ingeniería, física y matemáticas.</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>💻 Computación: Algoritmos para álgebra computacional y análisis numérico.</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>📊 Economía y finanzas: Modelado y solución de problemas con múltiples variables.</h5>
+                    <p><br>✔ Ventajas:</p>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>✔ Simplifica la solución al obtener directamente la matriz identidad.</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>✔ Evita cálculos repetitivos al resolver variables una a una.</h5>
+                    <h5 class="mb-3"><i class="fa fa-check text-primary mr-3"></i>✔ Método sistemático y fácil de programar.</h5>
+					
+                </div>
+            </div>
         </div>
-</footer>
+    </div>
 
-    <!-- flehc apara subir -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript librerias -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- LIBRERIAS JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/tempusdominus/js/moment.min.js"></script>
-    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
-    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-<script src="js/js1.js" defer></script>
 </body>
 </html>
